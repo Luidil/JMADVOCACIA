@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JM Advocacia - Excelência Jurídica</title>
+    <style>
+        :root {
+            --dourado: #D4AF37;
+            --dourado-escuro: #996515;
+            --marrom: #5C4033;
+            --marrom-claro: #8B7355;
+            --bege: #F5F5DC;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bege);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--marrom);
+            color: var(--dourado);
+            padding: 1rem 0;
+            border-bottom: 3px solid var(--dourado);
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 2.2rem;
+            margin-left: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: var(--dourado);
+            font-weight: bold;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: var(--dourado);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: white;
+            border-bottom: 2px solid var(--dourado);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(92, 64, 51, 0.8), rgba(92, 64, 51, 0.8)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--dourado);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--dourado);
+            color: var(--marrom);
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--dourado-escuro);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--marrom);
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title h2:after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--dourado);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            border-top: 3px solid var(--dourado);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card h3 {
+            color: var(--marrom);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card i {
+            color: var(--dourado);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        footer {
+            background-color: var(--marrom);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        footer p {
+            margin: 0.5rem 0;
+        }
+        
+        .footer-logo {
+            color: var(--dourado);
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .social-icons a {
+            color: var(--dourado);
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                justify-content: center;
+                margin-bottom: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-balance-scale fa-2x" style="color: var(--dourado);"></i>
+                    <h1><span>JM</span> Advocacia</h1>
+                </div>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Excelência Jurídica com Tradição</h2>
+                <p>Oferecendo soluções jurídicas personalizadas e eficientes para proteger seus interesses com a seriedade e profissionalismo que você merece.</p>
+                <a href="#contato" class="btn">Agende uma Consulta</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="servicos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+            </div>
+            <div class="services">
+                <div class="service-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Direito Empresarial</h3>
+                    <p>Assessoria jurídica completa para empresas, desde a constituição até questões contratuais e societárias.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Direito Imobiliário</h3>
+                    <p>Atuação em compra e venda, locação, regularização de imóveis e questões condominiais.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Direito Trabalhista</h3>
+                    <p>Defesa dos direitos dos trabalhadores e assessoria para empresas em relações empregatícias.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Direito de Família</h3>
+                    <p>Atendimento em divórcios, pensão alimentícia, guarda de filhos e inventários.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Direito Penal</h3>
+                    <p>Defesa em processos criminais e assessoria em inquéritos policiais.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Direito Previdenciário</h3>
+                    <p>Auxílio na concessão de benefícios e revisão de aposentadorias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="sobre" style="background-color: #f9f9f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre Nós</h2>
+            </div>
+            <div style="display: flex; align-items: center; gap: 3rem;">
+                <div style="flex: 1;">
+                    <h3 style="color: var(--marrom); font-size: 1.8rem; margin-bottom: 1rem;">JM Advocacia</h3>
+                    <p style="margin-bottom: 1.5rem;">Fundada em 2005, a JM Advocacia se consolidou como um dos escritórios mais respeitados da região, combinando tradição jurídica com abordagens modernas e eficientes.</p>
+                    <p style="margin-bottom: 1.5rem;">Nosso compromisso é oferecer atendimento personalizado, ético e transparente, garantindo a melhor estratégia para cada caso.</p>
+                    <p>Com uma equipe de profissionais altamente qualificados e especializados em diversas áreas do direito, estamos preparados para atender desde clientes individuais até grandes corporações.</p>
+                </div>
+                <div style="flex: 1;">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Escritório JM Advocacia" style="width: 100%; border-radius: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contato">
+        <div class="container">
+            <div class="section-title">
+                <h2>Entre em Contato</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                <div>
+                    <h3 style="color: var(--marrom); margin-bottom: 1.5rem;">Informações de Contato</h3>
+                    <p style="margin-bottom: 1rem;"><i class="fas fa-map-marker-alt" style="color: var(--dourado); margin-right: 0.5rem;"></i> Av. Principal, 1234 - Centro, Caldas Do Jorro/Bahia</p>
+                    <p style="margin-bottom: 1rem;"><i class="fas fa-phone" style="color: var(--dourado); margin-right: 0.5rem;"></i> (00) 1234-5678</p>
+                    <p style="margin-bottom: 1rem;"><i class="fas fa-envelope" style="color: var(--dourado); margin-right: 0.5rem;"></i> contato@jmadvocacia.com.br</p>
+                    <p style="margin-bottom: 1rem;"><i class="fas fa-clock" style="color: var(--dourado); margin-right: 0.5rem;"></i> Seg-Sex: 9h às 18h</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--marrom); margin-bottom: 1.5rem;">Envie uma Mensagem</h3>
+                    <form>
+                        <div style="margin-bottom: 1rem;">
+                            <input type="text" placeholder="Seu Nome" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <input type="email" placeholder="Seu E-mail" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <input type="text" placeholder="Assunto" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <textarea placeholder="Sua Mensagem" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; height: 120px;"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-logo">JM Advocacia</div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2023 JM Advocacia. Todos os direitos reservados.</p>
+            <p>Desenvolvido com excelência jurídica.</p>
+        </div>
+    </footer>
+</body>
+</html>
